@@ -26,6 +26,18 @@ def breadth_first_traversal(root):
             queue.append(curr.right)
 
 
+def breadth_first_search(root, target):
+    queue = [root]
+    while len(queue) > 0:
+        curr = queue.pop(0)
+        # curr.visit()
+        if curr.val == target:
+            return True
+        if curr.left is not None:
+            queue.append(curr.left)
+        if curr.right is not None:
+            queue.append(curr.right)
+    return False
 
 #
 #     a
@@ -49,3 +61,8 @@ b.right = e
 c.right = f
 
 breadth_first_traversal(a)
+
+print("Does the tree contein 'e'? ", end='')
+print(breadth_first_search(a, 'e'))
+print("Does the tree contein 'z'? ", end='')
+print(breadth_first_search(a, 'z'))
