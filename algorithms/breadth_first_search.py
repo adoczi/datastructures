@@ -15,6 +15,8 @@ class Node:
         print(self.val, end='')
 
 
+# Time: O(n) Space: O(n)
+# where n == number of nodes
 def breadth_first_traversal(root):
     queue = [root]
     while len(queue) > 0:
@@ -26,6 +28,8 @@ def breadth_first_traversal(root):
             queue.append(curr.right)
 
 
+# Time: O(n) Space: O(n)
+# where n == number of nodes
 def breadth_first_search(root, target):
     queue = [root]
     while len(queue) > 0:

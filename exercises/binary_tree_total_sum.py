@@ -21,6 +21,22 @@ class Node:
         print(self.val, end='')
 
 
+# O(n) Time and O(n) Space
+# where n == number of nodes
+def breadth_first_sum(root):
+    queue = [root]
+    counter = 0
+    while len(queue) > 0:
+        curr = queue.pop(0)
+        # curr.visit()
+        counter += curr.val
+        if curr.left is not None:
+            queue.append(curr.left)
+        if curr.right is not None:
+            queue.append(curr.right)
+    return counter
+
+
 def depth_first_sum(root_node):
     stack = [root_node]
     counter = 0
@@ -58,5 +74,6 @@ b.left = d
 b.right = e
 c.right = f
 
-print("Depth First Sum Iteratively: {}".format(depth_first_sum(a)))
-print("Depth First Sum Recursively: {}".format(depth_first_sum_recursive(a)))
+print("Breadth-First Sum Iteratively: {}".format(breadth_first_sum(a)))
+print("Depth-First Sum Iteratively: {}".format(depth_first_sum(a)))
+print("Depth-First Sum Recursively: {}".format(depth_first_sum_recursive(a)))
