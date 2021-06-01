@@ -1,2 +1,2 @@
 # datastructures
-Datastructures and Algorithms in Python as a prep for coding interviews
+I'm using this repo to learn the basics of datastructures and algorithms to prepare myself for techincal interviews
